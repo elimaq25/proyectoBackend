@@ -1,0 +1,21 @@
+{{> navbar}}
+<br/>
+
+<h1>Agregar Producto</h1>
+{{#if admin}}
+
+      <form method="post" action="/products">
+        <input type="text" name="name" id="name" placeholder="Titulo"/>
+        <input type="text" name="descripcion" id="descripcion" placeholder="Descripción"/>
+        <input type="text" name="codigo" id="codigo" placeholder="código"/>
+        <input type="text" name="thumbnail" id="thumbnail" placeholder="Imagen"/>
+        <input type="number" name="price" id="price" placeholder="precio"/>
+        <input type="number" name="stock" id="stock" placeholder="stock"/>
+        <input type="submit" value="Agregar producto" />
+      </form>
+   
+{{/if}}
+
+<br/>
+{{> footer}}
+<br/>

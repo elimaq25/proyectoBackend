@@ -1,0 +1,20 @@
+{{> navbar}}
+<br/>
+
+<h1>Joyería fina</h1>
+{{#if productsExist}}
+    {{#each products}}
+        <div class="page-content">
+            <div class="product-container">
+                {{this.id}}<br/>
+                {{this.title}}<br/>
+                {{this.price}}<br/>
+                <img src="{{this.thumbnail}}" class="product-img"/>
+            </div>
+        </div>
+    {{/each}}
+{{/if}}
+
+<br/>
+{{> footer}}
+<br/>

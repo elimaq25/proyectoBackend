@@ -1,0 +1,36 @@
+.footer {
+  color: blue;
+}
+
+.product-img {
+  width: 300px;
+  max-width: 300px;
+  height: 200px;
+  max-height: 200px;
+}
+
+h1 {
+  font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-container {
+  margin: 20px;
+  padding: 2px 16px;
+  position: relative;
+  background-color: rgb(241, 241, 234);
+  box-shadow:  0 4px 8px 0 rgb(235, 198, 232);
+}
+
+.product-container:hover {
+  box-shadow: 0 8px 16px 0 rgb(175, 55, 165);
+}
+
+.product-container img {
+  width: 300px;
+}
