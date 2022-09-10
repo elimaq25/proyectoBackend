@@ -35,12 +35,12 @@ let productsHC = [
   { id: 10, title: 'Perla', price: 650, thumbnail: 'http://localhost:8080/public/10.jpg' },
 ];
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
   //sirve productslist.hbs en index.hbs (index.hbs es la plantilla por defecto donde arranca todo)
   res.render('productslist', { products: productsHC, productsExist: true });
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
   const { id } = req.params;
   try {
     let found = productsHC.find( e => e.id == id);
@@ -54,17 +54,17 @@ app.get('/products/:id', (req, res) => {
   }
 });
 
-app.get('/form', (req, res) => {
+app.get('/api/form', (req, res) => {
   res.render('agregarProducto', { admin: true });
 });
 
-app.post('/products', (req, res) => {
+app.post('/api/products', (req, res) => {
   const { body } = req;
   productsHC.push(body);
   res.redirect(301, '/products');
 });
 
-app.put('/products/:id', (req, res) => {
+app.put('/api/products/:id', (req, res) => {
   const { id } = re.params;
   const { body } = req; 
   const productToChange = productsHC.find((item) => item.id == id); 
@@ -72,7 +72,7 @@ app.put('/products/:id', (req, res) => {
   res.render({ new: productToChange });
 });
 
-app.delete('/products/:id', (req, res) => {
+app.delete('/api/products/:id', (req, res) => {
   const { id } = req.params;
   const productsFilteredById = productsHC.filter((item) => item.id != id); 
   console.log(productsFilteredById);
